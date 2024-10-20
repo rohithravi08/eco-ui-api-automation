@@ -4,13 +4,9 @@
 - [Introduction](#introduction)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
-- [Configuration](#configuration)
 - [Running Tests](#running-tests)
 - [Writing Tests](#writing-tests)
 - [Directory Structure](#directory-structure)
-- [Troubleshooting](#troubleshooting)
-- [Contributing](#contributing)
-
 
 ## Introduction
 This project is a testing framework built using [Playwright](https://playwright.dev/) for UI E2E (E2E) testing & API testing. 

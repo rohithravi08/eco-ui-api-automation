@@ -24,7 +24,8 @@ test('Verification of Eneco sales flow @regression @smoke @ui', async ({ page })
   const aanbod = new aanbodPage(page)
   const control = new controlPage(page)
   const gegevens = new gegevensPage(page)
-  
+
+  //sales flow on the bereken pages
   await bereken.acceptCookieBanner()
   await bereken.enteraddress(address,houseNumber)
   await bereken.verifyAddressInfoAPI(street,city)
@@ -54,6 +55,7 @@ test('Verification of Eneco sales flow @regression @smoke @ui', async ({ page })
   await bereken.waitForHeaderDisplay('Ga je verhuizen?')
   await bereken.verifyURL('duurzame-energie/bestellen2/je-gegevens/verhuizen/')
 
+  //sales flow on the aanbod pages
   await bereken.clickButtonByText('Nee, ik ga niet verhuizen')
   await bereken.clickButtonByText('Volgende')
   await aanbod.waitForHeaderDisplay('Kies je type energiecontract')
@@ -67,6 +69,7 @@ test('Verification of Eneco sales flow @regression @smoke @ui', async ({ page })
   await aanbod.waitForHeaderDisplay('Vanaf wanneer wil je energie ontvangen?')
   await aanbod.verifyURL('duurzame-energie/bestellen2/je-gegevens/start-leverdatum/')
 
+  //sales flow on the gegevens pages
   await aanbod.clickButtonByText('Volgende')
   await gegevens.waitForHeaderDisplay('Woon of werk je op dit adres?')
   await gegevens.verifyURL('duurzame-energie/bestellen2/je-gegevens/adresgegevens/')
